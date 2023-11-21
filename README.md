@@ -54,10 +54,11 @@ Le projet suit une architecture modulaire avec des contrôleurs séparés pour c
 
 ## Pour tester l'API
 
-1. Ouvrez Postman et choisissez _Import_.
-2. Sélectionnez _File_ et cliquez sur _Upload Files_.
-3. Naviguez jusqu'au dossier `postman` de ce projet et sélectionnez `api-doc.json`.
-4. La collection de requêtes API sera importée dans Postman pour un test facile.
+1. Téléchargez et installer de test d'API [POSTMAN](https://www.postman.com/downloads/)
+2. Ouvrez Postman et choisissez _Import_.
+3. Sélectionnez _File_ et cliquez sur _Upload Files_.
+4. Naviguez jusqu'au dossier `postman` de ce projet et sélectionnez `api-doc.json`.
+5. La collection de requêtes API sera importée dans Postman pour un test facile.
 
 ## Comment travailler en équipe
 
