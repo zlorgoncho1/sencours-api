@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "7efe3889-6805-46b2-854b-b65d3e2a7144",
+		"name": "API Suivi des cours",
+		"description": "# Documentation de l'API de Suivi des Cours Universitaires\n\nCette API REST permet de gérer un système de suivi des cours universitaires. Elle offre des fonctionnalités pour gérer les étudiants, les professeurs, les cours, et les salles de cours.\n\n_Base URL_: `http://localhost:9999`",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16599092"
+	},
+	"item": [
+		{
+			"name": "Cours",
+			"item": [
+				{
+					"name": "GET ALL COURS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cours",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cours"
+							]
+						},
+						"description": "Renvoie une liste de tous les cours."
+					},
+					"response": []
+				},
+				{
+					"name": "GET COURS BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cours/104",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cours",
+								"104"
+							]
+						},
+						"description": "Renvoie un seul cours."
+					},
+					"response": []
+				}
+			],
+			"description": "## Cours\n\n#### Obtenir tous les cours\n\n- **GET** `/cours`\n- **Description :** Renvoie une liste de tous les cours.\n- **Exemple de requête :** `GET http://localhost:9999/cours`\n- **Réponse :**\n    \n    ``` json\n                [\n                  {\n                    \"id\": 101,\n                    \"nom\": \"Introduction à l'IA\",\n                    \"departement\": \"Informatique\",\n                    \"professeurId\": 1,\n                    \"horaire\": \"Lundi 10:00-12:00\",\n                    \"credits\": 4,\n                    \"salleId\": 201\n                  },\n                  ...\n                ]\n    \n     ```\n    \n\n#### Obtenir un cours par son ID\n\n- **GET** `/cours/:id`\n- **Description :** Renvoie un seul cours.\n- **Exemple de requête :** `GET http://localhost:9999/cours/101`\n- **Réponse :**\n    \n    ``` json\n                {\n                  \"id\": 101,\n                  \"nom\": \"Introduction à l'IA\",\n                  \"departement\": \"Informatique\",\n                  \"professeurId\": 1,\n                  \"horaire\": \"Lundi 10:00-12:00\",\n                  \"credits\": 4,\n                  \"salleId\": 201\n                },\n    \n     ```"
+		},
+		{
+			"name": "Etudiants",
+			"item": [
+				{
+					"name": "GET ALL ETUDIANTS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/etudiants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"etudiants"
+							]
+						},
+						"description": "Renvoie une liste de tous les étudiants."
+					},
+					"response": []
+				},
+				{
+					"name": "GET ETUDIANT BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/etudiants/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"etudiants",
+								"2"
+							]
+						},
+						"description": "Renvoie un seul étudiant."
+					},
+					"response": []
+				}
+			],
+			"description": "## Étudiants\n\n#### Obtenir tous les étudiants\n\n- **GET** `/etudiants`\n- **Description :** Renvoie une liste de tous les étudiants.\n- **Exemple de requête :** `GET http://localhost:9999/etudiants`\n    \n- **Réponse :**\n    \n    ``` json\n              [\n                {\n                  id: 1,\n                  nom: \"Ramos\",\n                  prenom: \"Fabrice Jordan\",\n                  dateNaissance: \"2000-04-15\",\n                  departement: \"Informatique\",\n                  anneeEtude: 2,\n                  emailUniversitaire: \"fabricejordan.ramos@unchk.edu.sn\",\n                  coursInscrits: [101, 102],\n                },\n                ...\n              ]\n    \n     ```\n    \n\n#### Obtenir un étudiant par son ID\n\n- **GET** `/etudiants/:id`\n- **Description :** Renvoie un seul étudiant\n- **Exemple de requête :** `GET http://localhost:9999/etudiants/1`\n    \n- **Réponse :**\n    \n    ``` json\n            {\n              id: 1,\n              nom: \"Ramos\",\n              prenom: \"Fabrice Jordan\",\n              dateNaissance: \"2000-04-15\",\n              departement: \"Informatique\",\n              anneeEtude: 2,\n              emailUniversitaire: \"fabricejordan.ramos@unchk.edu.sn\",\n              coursInscrits: [101, 102],\n            }\n    \n     ```"
+		},
+		{
+			"name": "Professeurs",
+			"item": [
+				{
+					"name": "GET ALL PROFESSEURS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/professeurs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"professeurs"
+							]
+						},
+						"description": "Renvoie une liste de tous les professeurs."
+					},
+					"response": []
+				},
+				{
+					"name": "GET PROFESSEUR BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/professeurs/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"professeurs",
+								"1"
+							]
+						},
+						"description": "Renvoie un seul professeur."
+					},
+					"response": []
+				}
+			],
+			"description": "## Professeurs\n\n#### Obtenir tous les professeurs\n\n- **GET** `/professeurs`\n- **Description :** Renvoie une liste de tous les professeurs.\n- **Exemple de requête :** `GET http://localhost:9999/professeurs`\n    \n- **Réponse :**\n    \n    ``` json\n        [\n          {\n            id: 1,\n            nom: \"Bar\",\n            prenom: \"Yacine\",\n            departement: \"Informatique\",\n            specialite: \"Intelligence Artificielle\",\n            bureau: \"Bâtiment B, Bureau 205\",\n            emailUniversitaire: \"yacine.bar@unchk.edu.sn\",\n            coursEnseignes: [101, 103],\n          },\n          ...\n        ]\n    \n     ```\n    \n\n#### Obtenir un professeur par son ID\n\n- **GET** `/professeurs/:id`\n- **Description :** Renvoie un seul professeur\n- **Exemple de requête :** `GET http://localhost:9999/professeurs/1`\n    \n- **Réponse :**\n    \n    ``` json\n        {\n          id: 1,\n          nom: \"Bar\",\n          prenom: \"Yacine\",\n          departement: \"Informatique\",\n          specialite: \"Intelligence Artificielle\",\n          bureau: \"Bâtiment B, Bureau 205\",\n          emailUniversitaire: \"yacine.bar@unchk.edu.sn\",\n          coursEnseignes: [101, 103],\n        }\n    \n     ```"
+		},
+		{
+			"name": "Salles",
+			"item": [
+				{
+					"name": "GET ALL SALLES",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/salles",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"salles"
+							]
+						},
+						"description": "Renvoie une liste de toutes les salles."
+					},
+					"response": []
+				},
+				{
+					"name": "GET SALLES BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/salles/202",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"salles",
+								"202"
+							]
+						},
+						"description": "Renvoie une seule salle"
+					},
+					"response": []
+				}
+			],
+			"description": "## Salles\n\n#### Obtenir toutes les salles\n\n- **GET** `/salles`\n- **Description :** Renvoie une liste de tous les salles.\n- **Exemple de requête :** `GET http://localhost:9999/salles`\n    \n- **Réponse :**\n    \n    ``` json\n        [\n          {\n            id: 201,\n            nomBatiment: \"Bâtiment A\",\n            numeroSalle: \"A101\",\n            capacite: 30,\n            equipements: [\"Projecteur\", \"Tableau blanc\"],\n            disponibilites: [\"Lundi 08:00-10:00\", \"Mercredi 14:00-16:00\"],\n          }\n          ...\n        ]\n    \n     ```\n    \n\n#### Obtenir une salle par son ID\n\n- **GET** `/salles/:id`\n- **Description :** Renvoie un seul salle\n- **Exemple de requête :** `GET http://localhost:9999/salles/1`\n    \n- **Réponse :**\n    \n    ``` json\n        {\n          id: 201,\n          nomBatiment: \"Bâtiment A\",\n          numeroSalle: \"A101\",\n          capacite: 30,\n          equipements: [\"Projecteur\", \"Tableau blanc\"],\n          disponibilites: [\"Lundi 08:00-10:00\", \"Mercredi 14:00-16:00\"],\n        }\n    \n     ```"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:9999"
+		}
+	]
+}
